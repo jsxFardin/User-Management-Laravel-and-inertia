@@ -90,10 +90,7 @@
         type: Array,
         default: [],
     },
-    user_agency: Object,
     user_team: Object,
-    camps: Object,
-    blocks: Object,
     storage_url: String,
     default_image_url: String
     });
@@ -257,52 +254,7 @@
                         </div>
                     </div>
 
-                    <div class="card card-primary card-outline p-3">
-                        <div class="row">
-                            <h5 class="text-bold">Camp Info</h5>
-                            <hr />
-
-                            <BreezeDataTable
-                                :route-name="''"
-                                :modal="false"
-                                :header="campHeader"
-                                :data-set="propsData.camps"
-                                :actions="''"
-                                />
-                        </div>
-                    </div>
-                    
-                    <div class="card card-primary card-outline p-3">
-                        <div class="row">
-                            <h5 class="text-bold">Block Info</h5>
-                            <hr/>
-
-                            <BreezeDataTable
-                                :route-name="''"
-                                :modal="false"
-                                :header="blockHeader"
-                                :data-set="propsData.blocks"
-                                :actions="''"
-                                />
-                        </div>
-                    </div>
-
-                    <div class="card card-primary card-outline p-3">
-                        <div class="row">
-                            <h5 class="text-bold">Agency Info</h5>
-                            <hr />
-
-                            <BreezeDataTable
-                                :route-name="''"
-                                :modal="false"
-                                :header="agencyHeader"
-                                :data-set="propsData.user_agency"
-                                :actions="''"
-                                />
-                        </div>
-                    </div>
-
-                    <div class="card card-primary card-outline p-3">
+                 <!--    <div class="card card-primary card-outline p-3">
                         <div class="row mt-3">
                             <h5 class="text-bold">Team Info</h5>
                             <hr />
@@ -315,7 +267,7 @@
                                 :actions="''"
                                 />
                         </div>
-                    </div>                    
+                    </div>           -->          
 
                 </div>
             </div>
