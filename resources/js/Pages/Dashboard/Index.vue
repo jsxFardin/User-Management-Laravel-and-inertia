@@ -181,62 +181,62 @@
         }
     })
     //FILTER DATA
-    watch( () => filterForm.sanitationZones, (value) => {
-            setParams.params.sanitationZones = value.length > 0 ? JSON.stringify(value) : null
-            setTimeout(function(){
-                callAllFunctions()
-            }, 1)
+    // watch( () => filterForm.sanitationZones, (value) => {
+    //         setParams.params.sanitationZones = value.length > 0 ? JSON.stringify(value) : null
+    //         setTimeout(function(){
+    //             callAllFunctions()
+    //         }, 1)
 
-        }, { immediate: false }
-    )
-    watch( () => filterForm.camp, (value) => {
-            setParams.params.camp = value.length > 0 ? JSON.stringify(value) : null
-            setTimeout(function(){
-                callAllFunctions()
-            }, 1)
+    //     }, { immediate: false }
+    // )
+    // watch( () => filterForm.camp, (value) => {
+    //         setParams.params.camp = value.length > 0 ? JSON.stringify(value) : null
+    //         setTimeout(function(){
+    //             callAllFunctions()
+    //         }, 1)
            
-        }, { immediate: false }
-    )
-    watch( () => filterForm.block, (value) => {
-            setParams.params.block = value.length > 0 ? JSON.stringify(value) : null
-            setTimeout(function(){
-                callAllFunctions()
-            }, 1)
+    //     }, { immediate: false }
+    // )
+    // watch( () => filterForm.block, (value) => {
+    //         setParams.params.block = value.length > 0 ? JSON.stringify(value) : null
+    //         setTimeout(function(){
+    //             callAllFunctions()
+    //         }, 1)
 
-        }, { immediate: false }
-    )
-    watch( () => filterForm.year, (value) => {
-            setParams.params.year = value.length > 0 ? JSON.stringify(value) : null
-            setTimeout(function(){
-                callAllFunctions()
-            }, 1)
+    //     }, { immediate: false }
+    // )
+    // watch( () => filterForm.year, (value) => {
+    //         setParams.params.year = value.length > 0 ? JSON.stringify(value) : null
+    //         setTimeout(function(){
+    //             callAllFunctions()
+    //         }, 1)
            
-        }, { immediate: false }
-    )
-    watch( () => filterForm.month, (value) => {
-            setParams.params.month = value.length > 0 ? JSON.stringify(value) : null
-            setTimeout(function(){
-                callAllFunctions()
-            }, 1)
+    //     }, { immediate: false }
+    // )
+    // watch( () => filterForm.month, (value) => {
+    //         setParams.params.month = value.length > 0 ? JSON.stringify(value) : null
+    //         setTimeout(function(){
+    //             callAllFunctions()
+    //         }, 1)
 
-        }, { immediate: false }
-    )
-    watch( () => filterForm.fromDate, (value) => {
-            setParams.params.fromDate = value ? value : null
-            setTimeout(function(){
-                callAllFunctions()
-            }, 1)
+    //     }, { immediate: false }
+    // )
+    // watch( () => filterForm.fromDate, (value) => {
+    //         setParams.params.fromDate = value ? value : null
+    //         setTimeout(function(){
+    //             callAllFunctions()
+    //         }, 1)
 
-        }, { immediate: false }
-    )
-    watch( () => filterForm.toDate, (value) => {
-            setParams.params.toDate = value ? value : null
-            setTimeout(function(){
-                callAllFunctions()
-            }, 1)
+    //     }, { immediate: false }
+    // )
+    // watch( () => filterForm.toDate, (value) => {
+    //         setParams.params.toDate = value ? value : null
+    //         setTimeout(function(){
+    //             callAllFunctions()
+    //         }, 1)
 
-        }, { immediate: false }
-    )
+    //     }, { immediate: false }
+    // )
     const callAllFunctions = () => {
         fetchLatrineDesludgeSchedule()
         fetchTotalVolumeDesludged()
@@ -247,9 +247,9 @@
         fetchTotalLitterFuelUsed()
         fetchReqDesludgeSanitationZone()
     }
-    onMounted(() => {
-        callAllFunctions()
-    })
+    // onMounted(() => {
+    //     callAllFunctions()
+    // })
 
     //FOR TABS
     const openScheduleList = (event, cityName) => {
@@ -353,7 +353,7 @@
             :showResetBtn="true" :showSearch="false" :showSearchBtn="false" :showFooter="true"/>
 
             <!-- Desludging schedule -->
-            <div class="row">
+           <!--  <div class="row">
                 <div class="col-md-8">
                     <div class=" card card-danger card-outline" style="height: 455px !important;">
                         <div class="card-header">
@@ -454,7 +454,7 @@
                 <div class="col-md-6">
                     <FirstStackedChart :data="data.totalLitterFuelUsed" :title="'Liter of Petrol/ Diesel  used'"/>
                 </div>
-            </div>
+            </div> -->
 
         </section>
         <!-- /.content -->

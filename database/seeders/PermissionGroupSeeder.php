@@ -27,7 +27,7 @@ class PermissionGroupSeeder extends Seeder
                 'parent_id' => null,
                 'sort' => 1,
                 'icon' => 'border-all',
-                'route' => 'dashboard|map'
+                'route' => 'dashboard'
             ],
             [
                 'id' => 2,

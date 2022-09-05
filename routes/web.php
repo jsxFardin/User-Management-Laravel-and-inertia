@@ -50,7 +50,6 @@ Route::namespace('App\Http\Controllers')->group(function () {
         Route::put('role/status/{role}', [RoleController::class, 'updateStatus'])->name('role.status');
 
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-        Route::get('/map', [DashboardController::class, 'map'])->name('map');
 
         Route::post('user/uploadimage', [UserController::class, 'uploadImage'])->name('upload.image');
         Route::put('user/changepassword/{user}', [UserController::class, 'changePassword'])->name('changepassword');
