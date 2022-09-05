@@ -37,7 +37,7 @@ class HandleInertiaRequests extends Middleware
         return array_merge(parent::share($request), [
             'config' => [
                 'appName' => config('app.name'),
-                'logo' => asset(env('APP_LOGO', 'assets/image/logo.png')),
+                'logo' => asset(env('APP_LOGO', 'assets/image/erp_logo.jpg')),
                 'avatar' => asset(env('APP_AVATAR', 'assets/image/user2-160x160.jpg')),
             ],
             'ziggy' => function () {

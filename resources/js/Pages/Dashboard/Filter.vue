@@ -41,7 +41,7 @@
         :show-reset-btn="showResetBtn"
         :reset-link="resetLink"
     >
-        <div class="col-md-3">
+        <!-- <div class="col-md-3">
             <BreezeLabel for="year" value="Year" />
             <multi-select
                 v-model="filterForm.year"
@@ -63,40 +63,7 @@
                 mode="tags"
             />
         </div>
-        <div class="col-md-3">
-            <BreezeLabel for="camp" value="Camp" />
-            <multi-select
-                v-model="filterForm.camp"
-                @change="getBlock($event), $emit('onChangeData')"
-                :options="camps"
-                :placeholder="`Choose a camp`"
-                :searchable="true"
-                mode="tags"
-                :close-on-select="false"
-            />
-        </div>
-        <div class="col-md-3">
-            <BreezeLabel for="block" value="Block" />
-            <multi-select
-                v-model="filterForm.block"
-                :options="data.campBlocks"
-                :placeholder="`Choose a block`"
-                :searchable="true"
-                mode="tags"
-                :close-on-select="false"
-            />
-        </div>
-        <div class="col-md-3">
-            <BreezeLabel for="sanitationZones" value="Sanitation Zone" />
-            <multi-select
-                v-model="filterForm.sanitationZones"
-                :options="propsData.sanitationZones"
-                :placeholder="`Choose a Sanitation Zone`"
-                :searchable="true"
-                mode="tags"
-                :close-on-select="false"
-            />
-        </div>
+         -->
 
         <div class="col-md-3">
             <BreezeLabel for="fromDate" value="From Date" />

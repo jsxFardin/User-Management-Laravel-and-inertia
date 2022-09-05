@@ -70,7 +70,7 @@
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img :src="$page.props.config.avatar" :alt="'User Image'" class="img-circle elevation-2">
+                    <img :src="$page.props.config.logo" :alt="'User Image'" class="img-circle elevation-2">
                 </div>
                 <div class="info">
                     <Link :href="route('user.profile')" class="d-block">

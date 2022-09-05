@@ -276,7 +276,7 @@
 
         <!-- Main content -->
         <section class="content">
-            <div class="container-fluid d-sm-none d-md-block d-none d-sm-block d-md-none d-lg-block">
+            <!-- <div class="container-fluid d-sm-none d-md-block d-none d-sm-block d-md-none d-lg-block">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="d-flex">
@@ -345,7 +345,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Filter data -->
             <BreezeFilter :camps="camps" :blocks="blocks" :years="years" :months="months"
