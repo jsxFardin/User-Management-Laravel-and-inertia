@@ -11,7 +11,6 @@ class DatabaseSeeder extends Seeder
 {
     /**
      * Seed the application's database.role_id' => 4,
-            ),
      *
      * @return void
      */
