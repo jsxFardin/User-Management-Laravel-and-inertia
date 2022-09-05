@@ -24,13 +24,13 @@ class RoleSeeder extends Seeder
                 'name'  => 'SUPER ADMIN',
             ],
             [
-                'name'  => 'AGENCY',
+                'name'  => 'MANAGER',
             ],
             [
                 'name'  => 'SUPERVISOR',
             ],
             [
-                'name'  => 'VOLUNTEERS',
+                'name'  => 'USER',
             ],
         ];
 
