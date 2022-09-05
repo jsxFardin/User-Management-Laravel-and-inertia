@@ -3,27 +3,18 @@
     import BreezeAuthenticatedLayout from "@/Layouts/Authenticated.vue";
     import BreezeBreadcrumb from "@/Components/Breadcrumb.vue";
     import BreezeCard from "@/Components/Card.vue";
-    import { computed } from "@vue/runtime-core";
     import BreezeForm from '@/Pages/User/User/Form.vue'
 
     const propsData = defineProps({
         roles: Object,
-        agency: Object,
-        teams: Object,
-        position: Object,
     });
     const form = useForm({
         name: "",
         username: "",
         email: "",
         mobile: "",
-        position_id: "",
         password: "",
         roles: "",
-        row: [{
-            agency_id: route().params.agency ?? "",
-            team_id: route().params.team ? [route().params.team] : [],
-        }]
     })
     
     const submit = () => {
@@ -56,8 +47,7 @@
                 </div>
                 
                 <form @submit.prevent="submit">
-                    <BreezeForm :form-data="form" :position="position"
-                        :roles="roles" :agency="agency" :team-names="teams"></BreezeForm>
+                    <BreezeForm :form-data="form" :roles="roles"></BreezeForm>
                 </form>
 
             </BreezeCard>

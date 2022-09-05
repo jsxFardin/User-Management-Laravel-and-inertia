@@ -288,7 +288,7 @@ function mapRoles($roleData, $multiselect = false)
                 ];
             }, $roleData);
         endif;
-        $data = !$multiselect ? $data : setMapping($data, 'value', 'label');
+        $data = !$multiselect ? $data : setMapping($data, 'id', 'name');
     endif;
 
     return $data;

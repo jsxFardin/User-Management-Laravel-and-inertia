@@ -52,12 +52,7 @@ class UserController extends BaseController
         $this->authorize('list-user', User::class);
 
         $lists = $this->user->lists(false, request()->all(), true);
-
-        // FOR FILTER
-        $roles      = mapRoles($this->role->lists());
-
-        $userData   = $this->user->lists();
-        // $filterData = mapArray($userData, true, true, ['agency']);
+        $roles = setMapping($this->role->lists(), 'id', 'name');
 
         return Inertia::render(
             'User/User/index',
@@ -80,16 +75,13 @@ class UserController extends BaseController
     {
         $this->authorize('create-user', User::class);
 
-        $roles      = $this->role->lists();
-        $position   = Position::select('id as value', 'name as label')->get();
-        $userData   = $this->user->lists();
-        $filterData = mapArray($userData, true, true, ['agency', 'team']);
+        $roles      = setMapping($this->role->lists(), 'id', 'name');
 
         return Inertia::render('User/User/create', [
-            'agency'  => $filterData['agency'] ?? [],
-            'teams'   => $filterData['team'] ?? [],
+            'agency'  => [],
+            'teams'   => [],
             'roles'   => $roles,
-            'position' => $position,
+            'position' => [],
         ]);
     }
 

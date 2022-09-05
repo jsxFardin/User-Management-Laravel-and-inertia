@@ -75,12 +75,6 @@ class UserRepository extends BaseRepository implements UserInterface
 
         // ADD ROLES
         $this->roleDataHandler($userinfo, $data['roles'], data_get($data, 'role_id'));
-
-        //ADD USER FOR AGENCY AND TEAM
-        if (isset($data['row']) && count($data['row']) != 0) :
-            $this->tagUserDataHandler($data['row'], $userinfo);
-        endif;
-
         return $userinfo;
     }
 
@@ -92,14 +86,6 @@ class UserRepository extends BaseRepository implements UserInterface
 
         // UPDATE ROLES
         $this->roleDataHandler($userinfo, $data['roles'], data_get($data, 'role_id'));
-
-        //ADD USER FOR AGENCY AND TEAM
-        if (isset($data['row']) && count($data['row']) != 0) :
-            // DELETE TAG USER
-            $this->tagUser->delete(['user_id' => $userinfo->id]);
-            $this->tagUserDataHandler($data['row'], $userinfo);
-        endif;
-
         return $userinfo;
     }
 
