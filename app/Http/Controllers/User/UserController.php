@@ -144,54 +144,21 @@ class UserController extends BaseController
     {
         $this->authorize('edit-user', $user);
 
-        $position       = Position::select('id as value', 'name as label')->get();
         $callRoles      = new Role();
         $roles          = $callRoles->getRoles();
         // AGENCY AND TEAMS
         $userData       = $this->user->show($user->id);
-        $agencyMapData  = mapAgencies($userData->agency, true);
-        $teamMapData    = mapTeams($userData->team, true);
-
-        $getTeams       = $this->team->lists(false, ['agency' => $agencyMapData->map(function ($item) {
-            return $item->value;
-        })->toArray()]);
-        $getTeams       = mapTeams($getTeams, true);
-        $teams  = [];
-
-        foreach ($getTeams as $item) :
-            if (!array_key_exists($item->agency_id, $teams)) :
-                $teams[$item->agency_id][] = $item;
-            else :
-                array_push($teams[$item->agency_id], $item);
-            endif;
-        endforeach;
-        $teams = array_values($teams);
 
         // SELECTED AGENCY AND TEAMS
-        $agencyTeam = [];
-        foreach ($teamMapData as $item) :
-            if (!array_key_exists($item->agency_id, $agencyTeam)) :
-                $agencyTeam[$item->agency_id] = [
-                    'agency_id' => $item->agency_id,
-                    'team_id'   => [$item->value]
-                ];
-            else :
-                $agencyTeam[$item->agency_id]['team_id'][] = $item->value;
-            endif;
-        endforeach;
-
-        $userData->row              = array_values($agencyTeam);
         $userData->roles        = $userData->role_id;
-        $userData->position_id  = $userData->position;
         unset($userData->role_id);
-        unset($userData->position);
 
         return Inertia::render('User/User/edit', [
             'user'      => $userData,
             'roles'     => $roles,
-            'agency'    => $agencyMapData,
-            'teams'     => $teams,
-            'position'  => $position
+            'agency'    => [],
+            'teams'     => [],
+            'position'  => []
         ]);
     }
 
