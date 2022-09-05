@@ -29,7 +29,7 @@ class DashboardController extends BaseController
     {
 
         // $result    = $this->user->show(Auth::id());
-        $users      = $this->user->total();
+        // $users      = $this->user->total();
 
         return Inertia::render(
             'Dashboard/Index',
@@ -44,7 +44,7 @@ class DashboardController extends BaseController
                 'total-blocks' => 10,
                 'total-camps' => 20,
                 'total-teams' => 21,
-                'total-users' => $users,
+                'total-users' => 20,
                 'total-latrines' => 100,
                 'total-sanitation-zones' => 120,
                 'months' => [],

@@ -26,47 +26,19 @@ class UserRepository extends BaseRepository implements UserInterface
             ->leftJoin('positions', 'positions.id', 'users.position_id')
             ->leftJoin('user_images', 'user_images.user_id', '=', 'users.id')
             ->leftJoin('tag_users', 'tag_users.user_id', '=', 'users.id')
-            ->leftJoin('agencies', function($join){
-                $join->on('agencies.id', 'tag_users.taggable_id')
-                    ->where('tag_users.taggable_type', \App\Models\Agency::class);
-            })
-            ->leftJoin('teams', function($join){
-                $join->on(DB::raw("IF(roles.id < 3, teams.agency_id = agencies.id, (teams.id = tag_users.taggable_id AND tag_users.taggable_type = \"App\\\Models\\\Team\"))"), '=', DB::raw('1'));
-            })
-            ->leftJoin('tag_areas', function($join){
-                $join->on(DB::raw("IF(roles.id < 3, (tag_areas.agency_id = agencies.id AND tag_areas.team_id IS NULL), (tag_areas.team_id = tag_users.taggable_id AND tag_users.taggable_type = \"App\\\Models\\\Team\"))"), '=', DB::raw('1'));
-            })
-            ->leftJoin('camps', function($join){
-                $join->on('camps.id', 'tag_areas.taggable_id')
-                    ->where('tag_areas.taggable_type', \App\Models\Encampment\Camp::class);
-            })
-            ->leftJoin('blocks', function($join){
-                $join->on('blocks.id', 'tag_areas.taggable_id')
-                    ->where('tag_areas.taggable_type', \App\Models\Encampment\Block::class);
-            })
-            ->select('users.id', 'users.id_no', 'users.name', 'users.username', 'users.email', 'users.mobile', 'users.active',
-                'roles.name as role_name', 'roles.id as role_id', 'positions.name as position', 'users.created_at as joined',
-                'user_images.image')
-            ->selectRaw('(GROUP_CONCAT(
-                DISTINCT CONCAT(agencies.id,"|",agencies.agency_name,"|",agencies.contact_person,"|",agencies.mobile,"|",agencies.email)
-                ORDER BY agencies.id ASC
-                SEPARATOR ","
-            )) AS agency')
-            ->selectRaw('(GROUP_CONCAT(
-                DISTINCT CONCAT(teams.id,"|",teams.team_name,"|",teams.contact_person,"|",teams.mobile,"|",teams.email,"|",teams.agency_id)
-                ORDER BY teams.id ASC
-                SEPARATOR ","
-            )) AS team')
-            ->selectRaw('(GROUP_CONCAT(
-                DISTINCT CONCAT(camps.id,"|",camps.name,"|",camps.short_name)
-                ORDER BY camps.id ASC
-                SEPARATOR ","
-            )) AS camp')
-            ->selectRaw('(GROUP_CONCAT(
-                DISTINCT CONCAT(blocks.id,"|",blocks.short_name,"|",blocks.camp_id,"|",blocks.name)
-                ORDER BY blocks.id ASC
-                SEPARATOR ","
-            )) AS block')
+            ->select(
+                'users.id',
+                'users.id_no',
+                'users.name',
+                'users.username',
+                'users.email',
+                'users.mobile',
+                'users.active',
+                'roles.name as role_name',
+                'roles.id as role_id',
+                'users.created_at as joined',
+                'user_images.image'
+            )
             ->groupBy('users.id');
     }
 
@@ -76,7 +48,7 @@ class UserRepository extends BaseRepository implements UserInterface
         $query = $this->query();
 
         $query = $query->when(!$this->isAdmin && $this->isAgency, function ($query) use ($params) {
-                $query->whereRaw('FIND_IN_SET(
+            $query->whereRaw('FIND_IN_SET(
                     agencies.id, (
                         SELECT GROUP_CONCAT(
                             DISTINCT CONCAT(tag_agency.taggable_id)
@@ -85,8 +57,8 @@ class UserRepository extends BaseRepository implements UserInterface
                         WHERE tag_agency.taggable_type = "App\\\Models\\\Agency"
                         AND tag_agency.user_id IN (' . implode(',', [$this->userinfo->id]) . ')
                 ))');
-            })->when(!$this->isAdmin && !$this->isAgency, function ($query) use ($params) {
-                $query->whereRaw('FIND_IN_SET(
+        })->when(!$this->isAdmin && !$this->isAgency, function ($query) use ($params) {
+            $query->whereRaw('FIND_IN_SET(
                     teams.id, (
                         SELECT GROUP_CONCAT(
                             DISTINCT CONCAT(tag_team.taggable_id)
@@ -96,7 +68,7 @@ class UserRepository extends BaseRepository implements UserInterface
                         AND tag_team.user_id IN (' . implode(',', [$this->userinfo->id]) . ')
                 ))')
                 ->where('tag_users.taggable_type', \App\Models\Team::class);
-            });
+        });
 
         //For Sort
         if ($sort && data_get($params, 'name')) :
@@ -111,30 +83,6 @@ class UserRepository extends BaseRepository implements UserInterface
     public function total($params = null)
     {
         $query = $this->query();
-
-        $query = $query->when(!$this->isAdmin && $this->isAgency, function ($query) use ($params) {
-                $query->whereRaw('FIND_IN_SET(
-                    agencies.id, (
-                        SELECT GROUP_CONCAT(
-                            DISTINCT CONCAT(tag_agency.taggable_id)
-                        )
-                        FROM tag_users as tag_agency
-                        WHERE tag_agency.taggable_type = "App\\\Models\\\Agency"
-                        AND tag_agency.user_id IN (' . implode(',', [$this->userinfo->id]) . ')
-                ))');
-            })->when(!$this->isAdmin && !$this->isAgency, function ($query) use ($params) {
-                $query->whereRaw('FIND_IN_SET(
-                    teams.id, (
-                        SELECT GROUP_CONCAT(
-                            DISTINCT CONCAT(tag_team.taggable_id)
-                        )
-                        FROM tag_users as tag_team
-                        WHERE tag_team.taggable_type = "App\\\Models\\\Team"
-                        AND tag_team.user_id IN (' . implode(',', [$this->userinfo->id]) . ')
-                ))')
-                ->where('tag_users.taggable_type', \App\Models\Team::class);
-            });
-
         return $query->get()->count();
     }
 
@@ -157,7 +105,7 @@ class UserRepository extends BaseRepository implements UserInterface
         $this->roleDataHandler($userinfo, $data['roles'], data_get($data, 'role_id'));
 
         //ADD USER FOR AGENCY AND TEAM
-        if (isset($data['row']) && count($data['row']) != 0):
+        if (isset($data['row']) && count($data['row']) != 0) :
             $this->tagUserDataHandler($data['row'], $userinfo);
         endif;
 
@@ -174,7 +122,7 @@ class UserRepository extends BaseRepository implements UserInterface
         $this->roleDataHandler($userinfo, $data['roles'], data_get($data, 'role_id'));
 
         //ADD USER FOR AGENCY AND TEAM
-        if (isset($data['row']) && count($data['row']) != 0):
+        if (isset($data['row']) && count($data['row']) != 0) :
             // DELETE TAG USER
             $this->tagUser->delete(['user_id' => $userinfo->id]);
             $this->tagUserDataHandler($data['row'], $userinfo);
@@ -186,10 +134,10 @@ class UserRepository extends BaseRepository implements UserInterface
     // Handel User Role Data
     private function roleDataHandler($reference, $data, $roleId = null)
     {
-        if(!empty($roleId) && $roleId > $data[0]):
+        if (!empty($roleId) && $roleId > $data[0]) :
             $reference->roles()->detach();
             $reference->roles()->attach($data);
-        elseif(empty($roleId)):
+        elseif (empty($roleId)) :
             $reference->roles()->detach();
             $reference->roles()->attach($data);
         endif;
@@ -199,18 +147,18 @@ class UserRepository extends BaseRepository implements UserInterface
     private function tagUserDataHandler($requestData, $userinfo)
     {
         $users = [];
-        foreach($requestData as $item):
-            if(!is_null($item['agency_id'])):
+        foreach ($requestData as $item) :
+            if (!is_null($item['agency_id'])) :
                 array_push($users, [
-                    'taggable_type'=> \App\Models\Agency::class,
+                    'taggable_type' => \App\Models\Agency::class,
                     'taggable_id'  => $item['agency_id'],
                     'user_id'      => $userinfo->id
                 ]);
             endif;
-            foreach($item['team_id'] as $getTeam):
-                if(!is_null($getTeam)):
+            foreach ($item['team_id'] as $getTeam) :
+                if (!is_null($getTeam)) :
                     array_push($users, [
-                        'taggable_type'=> \App\Models\Team::class,
+                        'taggable_type' => \App\Models\Team::class,
                         'taggable_id'  => $getTeam,
                         'user_id'      => $userinfo->id
                     ]);

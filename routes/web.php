@@ -1,21 +1,13 @@
 <?php
-
-use App\Http\Controllers\Agency\AgencyController;
 use App\Http\Controllers\CsvDataController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\Encampment\BlockController;
-use App\Http\Controllers\Latrine\ComplaintController;
-use App\Http\Controllers\Latrine\InspectionController;
-use App\Http\Controllers\Latrine\LatrineController;
 use App\Http\Controllers\Report\ReportController;
-use App\Http\Controllers\Team\TeamController;
 use App\Http\Controllers\User\RoleController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Providers\RouteServiceProvider;
-use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,16 +58,6 @@ Route::namespace('App\Http\Controllers')->group(function () {
         Route::resource('user', User\UserController::class);
         Route::resource('role', User\RoleController::class);
 
-        Route::put('/latrine/status/{latrine}', [LatrineController::class, 'updateStatus'])->name('latrine.status');
-
-        Route::resources([
-            'latrine' => Latrine\LatrineController::class,
-        ]);
-        Route::resources([
-            'complaint' => Latrine\ComplaintController::class,
-            'desludge' => Latrine\DesludgeController::class,
-            'inspection' => Latrine\InspectionController::class,
-        ]);
 
         //REPORTS
         Route::get('report/latrine', [ReportController::class, 'latrineReport'])->name('report.latrine.index');

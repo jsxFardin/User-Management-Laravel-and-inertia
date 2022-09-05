@@ -37,11 +37,9 @@ class UserController extends BaseController
     {
         $this->user = $user;
         $this->role = $role;
-        $this->team = $team;
 
         $this->setService($this->user);
         $this->setService($this->role);
-        $this->setService($this->team);
     }
 
     /**
