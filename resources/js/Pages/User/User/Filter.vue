@@ -19,11 +19,9 @@
 
         search_value: route().params.search_value ?? "",
         role_id: route().params.role_id ?? "",
-        agency_id: route().params.agency_id ?? ""
     });
     defineProps({
         roles: Object,
-        agencies: Object,
     })
     const role = computed(() => storeData.getters.getAuthUser.roles ?? [])
 
@@ -51,11 +49,6 @@
             <BreezeLabel for="role_id" value="Role" />
             <multi-select v-model="filterForm.role_id" :searchable="true"
                 :options="roles" :placeholder="`Choose a Role`"/>
-        </div>
-        <div class="col-md-4" v-if="role.id == 1">
-            <BreezeLabel for="agency_id" value="Agency" />
-            <multi-select v-model="filterForm.agency_id" :searchable="true"
-                :options="agencies" :placeholder="`Choose a Agency`"/>
         </div>
     </BreezeDataTableFilter>
 </template>
