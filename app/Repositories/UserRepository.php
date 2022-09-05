@@ -23,9 +23,7 @@ class UserRepository extends BaseRepository implements UserInterface
         return $this->user
             ->join('role_user', 'role_user.user_id', 'users.id')
             ->join('roles', 'roles.id', 'role_user.role_id')
-            ->leftJoin('positions', 'positions.id', 'users.position_id')
             ->leftJoin('user_images', 'user_images.user_id', '=', 'users.id')
-            ->leftJoin('tag_users', 'tag_users.user_id', '=', 'users.id')
             ->select(
                 'users.id',
                 'users.id_no',
@@ -46,36 +44,10 @@ class UserRepository extends BaseRepository implements UserInterface
     public function lists($paginate = false, $params = null, $sort = false)
     {
         $query = $this->query();
-
-        $query = $query->when(!$this->isAdmin && $this->isAgency, function ($query) use ($params) {
-            $query->whereRaw('FIND_IN_SET(
-                    agencies.id, (
-                        SELECT GROUP_CONCAT(
-                            DISTINCT CONCAT(tag_agency.taggable_id)
-                        )
-                        FROM tag_users as tag_agency
-                        WHERE tag_agency.taggable_type = "App\\\Models\\\Agency"
-                        AND tag_agency.user_id IN (' . implode(',', [$this->userinfo->id]) . ')
-                ))');
-        })->when(!$this->isAdmin && !$this->isAgency, function ($query) use ($params) {
-            $query->whereRaw('FIND_IN_SET(
-                    teams.id, (
-                        SELECT GROUP_CONCAT(
-                            DISTINCT CONCAT(tag_team.taggable_id)
-                        )
-                        FROM tag_users as tag_team
-                        WHERE tag_team.taggable_type = "App\\\Models\\\Team"
-                        AND tag_team.user_id IN (' . implode(',', [$this->userinfo->id]) . ')
-                ))')
-                ->where('tag_users.taggable_type', \App\Models\Team::class);
-        });
-
         //For Sort
         if ($sort && data_get($params, 'name')) :
             $query = $this->sortResult($query, data_get($params, 'name'), data_get($params, 'sort'));
         endif;
-
-        // return $query->toSql();
 
         return $paginate ? $this->resultWithPagination($query, data_get($params, 'max_count') ?? 10) : $this->resultSet($query);
     }

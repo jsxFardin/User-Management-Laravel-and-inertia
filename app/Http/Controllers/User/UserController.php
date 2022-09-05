@@ -33,8 +33,7 @@ class UserController extends BaseController
     public function __construct(
         UserInterface $user,
         RoleInterface $role,
-    )
-    {
+    ) {
         $this->user = $user;
         $this->role = $role;
 
@@ -55,10 +54,10 @@ class UserController extends BaseController
         $lists = $this->user->lists(false, request()->all(), true);
 
         // FOR FILTER
-        $roles      = $this->role->lists();
+        $roles      = mapRoles($this->role->lists());
 
         $userData   = $this->user->lists();
-        $filterData = mapArray($userData, true, true, ['agency']);
+        // $filterData = mapArray($userData, true, true, ['agency']);
 
         return Inertia::render(
             'User/User/index',
@@ -66,7 +65,7 @@ class UserController extends BaseController
                 'list' => $lists,
                 'access' => $this->accessLists(User::class, 'user'),
                 'roles' => $roles,
-                'agencies' => $filterData['agency'] ?? []
+                'agencies' => []
             ]
 
         );
@@ -90,7 +89,7 @@ class UserController extends BaseController
             'agency'  => $filterData['agency'] ?? [],
             'teams'   => $filterData['team'] ?? [],
             'roles'   => $roles,
-            'position'=> $position,
+            'position' => $position,
         ]);
     }
 
@@ -161,15 +160,16 @@ class UserController extends BaseController
         $agencyMapData  = mapAgencies($userData->agency, true);
         $teamMapData    = mapTeams($userData->team, true);
 
-        $getTeams       = $this->team->lists(false, ['agency' => $agencyMapData->map(function($item) {
+        $getTeams       = $this->team->lists(false, ['agency' => $agencyMapData->map(function ($item) {
             return $item->value;
         })->toArray()]);
-        $getTeams       = mapTeams($getTeams, true); $teams  = [];
+        $getTeams       = mapTeams($getTeams, true);
+        $teams  = [];
 
-        foreach($getTeams as $item):
-            if(!array_key_exists($item->agency_id, $teams)):
+        foreach ($getTeams as $item) :
+            if (!array_key_exists($item->agency_id, $teams)) :
                 $teams[$item->agency_id][] = $item;
-            else:
+            else :
                 array_push($teams[$item->agency_id], $item);
             endif;
         endforeach;
@@ -177,13 +177,13 @@ class UserController extends BaseController
 
         // SELECTED AGENCY AND TEAMS
         $agencyTeam = [];
-        foreach($teamMapData as $item):
-            if(!array_key_exists($item->agency_id, $agencyTeam)):
+        foreach ($teamMapData as $item) :
+            if (!array_key_exists($item->agency_id, $agencyTeam)) :
                 $agencyTeam[$item->agency_id] = [
                     'agency_id' => $item->agency_id,
                     'team_id'   => [$item->value]
                 ];
-            else:
+            else :
                 $agencyTeam[$item->agency_id]['team_id'][] = $item->value;
             endif;
         endforeach;
@@ -191,7 +191,8 @@ class UserController extends BaseController
         $userData->row              = array_values($agencyTeam);
         $userData->roles        = $userData->role_id;
         $userData->position_id  = $userData->position;
-        unset($userData->role_id); unset($userData->position);
+        unset($userData->role_id);
+        unset($userData->position);
 
         return Inertia::render('User/User/edit', [
             'user'      => $userData,
@@ -327,8 +328,7 @@ class UserController extends BaseController
             if (Hash::check($request->current_password, auth()->user()->password)) {
                 $user->update(['password' => $request->new_password]);
                 return redirect()->back();
-            }
-            else {
+            } else {
                 return redirect()->back()->with('message', 'Current password is not matched!');
             }
         } catch (Exception $ex) {
@@ -341,25 +341,8 @@ class UserController extends BaseController
         $userData           = $request->user()->only('id', 'id_no', 'name', 'username', 'email', 'mobile');
         $userData['roles']  = auth()->user()->roles()->first();
 
-        $agency = [];
-        $team = [];
-        $request = new Request([
-            'user_id' => $userData['id'],
-        ]);
-        $user = new User();
-        $userAgencyTeam = $user->userAgencyTeam($request, true);
-
-        foreach($userAgencyTeam as $item):
-            array_push($agency, $item['agency_id']);
-            if(count($item['team_id'])):
-                foreach($item['team_id'] as $data):
-                    array_push($team, $data);
-                endforeach;
-            endif;
-        endforeach;
-
-        $userData['agencies']  = $agency;
-        $userData['teams']     = $team;
+        $userData['agencies']  = [];
+        $userData['teams']     = [];
 
         return response([
             'user' => $userData
