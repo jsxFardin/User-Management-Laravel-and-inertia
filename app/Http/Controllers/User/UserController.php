@@ -78,10 +78,7 @@ class UserController extends BaseController
         $roles      = setMapping($this->role->lists(), 'id', 'name');
 
         return Inertia::render('User/User/create', [
-            'agency'  => [],
-            'teams'   => [],
             'roles'   => $roles,
-            'position' => [],
         ]);
     }
 
@@ -146,19 +143,15 @@ class UserController extends BaseController
 
         $callRoles      = new Role();
         $roles          = $callRoles->getRoles();
-        // AGENCY AND TEAMS
+
         $userData       = $this->user->show($user->id);
 
-        // SELECTED AGENCY AND TEAMS
         $userData->roles        = $userData->role_id;
         unset($userData->role_id);
 
         return Inertia::render('User/User/edit', [
             'user'      => $userData,
             'roles'     => $roles,
-            'agency'    => [],
-            'teams'     => [],
-            'position'  => []
         ]);
     }
 

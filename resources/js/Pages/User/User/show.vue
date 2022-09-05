@@ -30,52 +30,6 @@
             key: "email",
         },
     ])
-    const teamHeader = ref([
-        {
-            title: "Team Name",
-            type: "text",
-            key: "team_name",
-        },
-        {
-            title: "Contact Person",
-            type: "text",
-            key: "contact_person",
-        },
-        {
-            title: "Mobile",
-            type: "text",
-            key: "mobile",
-        },
-        {
-            title: "Email",
-            type: "text",
-            key: "email",
-        },
-    ])
-    const blockHeader = ref([
-        {
-            title: "Block Name",
-            type: "text",
-            key: "name",
-        },
-        {
-            title: "Block Short Name",
-            type: "text",
-            key: "short_name",
-        },
-    ])
-    const campHeader = ref([
-        {
-            title: "Camp Name",
-            type: "text",
-            key: "name",
-        },
-        {
-            title: "Camp Short Name",
-            type: "text",
-            key: "short_name",
-        },
-    ])
     const propsData = defineProps({
         item: {
             type: Array,
@@ -89,10 +43,6 @@
             type: Array,
             default: [],
         },
-        user_agency: Object,
-        user_team: Object,
-        camps: Object,
-        blocks: Object,
         storage_url: String
     });
     const form = useForm({
@@ -181,7 +131,7 @@
                 </div>
             </div>
 
-            <div class="row mt-3">
+            <!-- <div class="row mt-3">
                 <h5 class="text-bold">Camp Info</h5>
                 <hr />
 
@@ -192,43 +142,7 @@
                     :data-set="propsData.camps"
                     :actions="''"
                     />
-            </div>
-            <div class="row mt-3">
-                <h5 class="text-bold">Block Info</h5>
-                <hr />
-
-                <BreezeDataTable
-                    :route-name="''"
-                    :modal="false"
-                    :header="blockHeader"
-                    :data-set="propsData.blocks"
-                    :actions="''"
-                    />
-            </div>
-            <div class="row mt-3">
-                <h5 class="text-bold">Agency Info</h5>
-                <hr />
-
-                <BreezeDataTable
-                    :route-name="''"
-                    :modal="false"
-                    :header="agencyHeader"
-                    :data-set="propsData.user_agency"
-                    :actions="''"
-                    />
-            </div>
-            <div class="row mt-3">
-                <h5 class="text-bold">Team Info</h5>
-                <hr />
-
-                <BreezeDataTable
-                    :route-name="''"
-                    :modal="false"
-                    :header="teamHeader"
-                    :data-set="propsData.user_team"
-                    :actions="''"
-                    />
-            </div>
+            </div> -->
         </BreezeCard>
         </section>
     </BreezeAuthenticatedLayout>
