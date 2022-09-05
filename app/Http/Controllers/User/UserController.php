@@ -33,7 +33,6 @@ class UserController extends BaseController
     public function __construct(
         UserInterface $user,
         RoleInterface $role,
-        TeamInterface $team
     )
     {
         $this->user = $user;

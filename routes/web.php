@@ -50,8 +50,6 @@ Route::namespace('App\Http\Controllers')->group(function () {
     Route::middleware(['auth', 'verified'])->group(function () {
         // Ajax Request
         Route::get('ajax/get-menus', [DashboardController::class, 'getMenus'])->name('ajax.menus');
-        Route::get('ajax/block-details', [BlockController::class, 'blockAndCampDetails'])->name('ajax.blockAndCampDetails');
-        Route::get('ajax/team-details', [TeamController::class, 'teamDetails'])->name('ajax.teamDetails');
         Route::get('ajax/user-details', [UserController::class, 'userDetails'])->name('ajax.userDetails');
         Route::get('ajax/auth-user', [UserController::class, 'authUser'])->name('ajax.authUser');
         Route::get('ajax/total-volume-desludged', [DashboardController::class, 'totalVolumeDesludged'])->name('ajax.total.volume.desludged');
@@ -64,43 +62,18 @@ Route::namespace('App\Http\Controllers')->group(function () {
         Route::get('ajax/required-sanitation-zone', [DashboardController::class, 'mostReqDesludgeSanitationZone'])->name('ajax.mostReqDesludgeSanitationZone');
 
         // Status update
-        Route::put('agency/status/{agency}', [AgencyController::class, 'updateStatus'])->name('agency.status');
-        Route::put('team/status/{team}', [TeamController::class, 'updateStatus'])->name('team.status');
         Route::put('user/status/{user}', [UserController::class, 'updateStatus'])->name('user.status');
         Route::put('role/status/{role}', [RoleController::class, 'updateStatus'])->name('role.status');
-        Route::put('inspection/status/{inspection}', [InspectionController::class, 'updateStatus'])->name('inspection.status');
-        Route::put('complaint/status/{complaint}', [ComplaintController::class, 'updateStatus'])->name('complaint.status');
 
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::get('/map', [DashboardController::class, 'map'])->name('map');
 
-        Route::resource('agency', Agency\AgencyController::class);
         Route::post('user/uploadimage', [UserController::class, 'uploadImage'])->name('upload.image');
         Route::put('user/changepassword/{user}', [UserController::class, 'changePassword'])->name('changepassword');
         Route::get('user/profile', [UserController::class, 'profile'])->name('user.profile');
         Route::resource('user', User\UserController::class);
         Route::resource('role', User\RoleController::class);
-        Route::resource('position', User\PositionController::class);
-        Route::resource('team', Team\TeamController::class);
 
-        // Setup
-        Route::prefix('setup')->name('setup.')->group(function () {
-            Route::resources([
-                'facility' => Setup\FacilityController::class,
-                'facility-used' => Setup\FacilityUsedController::class,
-                'pit' => Setup\PITController::class,
-                'structure' => Setup\StructureController::class,
-                'construction' => Setup\ConstructionController::class,
-                'donor' => Setup\DonorController::class,
-                'transfer' => Setup\TransferController::class,
-                'camp' => Encampment\CampController::class,
-                'block' => Encampment\BlockController::class,
-                'sanitation-zone' => Setup\SanitationZoneController::class,
-            ]);
-            Route::get('season', [App\Http\Controllers\Setup\SeasonController::class, 'index'])->name('season.index');
-            Route::put('season/{season}',  [App\Http\Controllers\Setup\SeasonController::class, 'update'])->name('season.update');
-            Route::put('block/status/{block}', [BlockController::class, 'updateStatus'])->name('block.status');
-        });
         Route::put('/latrine/status/{latrine}', [LatrineController::class, 'updateStatus'])->name('latrine.status');
 
         Route::resources([

@@ -1,13 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Interfaces\AgencyInterface;
-use App\Interfaces\CampInterface;
-use App\Interfaces\DashboardInterface;
-use App\Interfaces\DesludgeInterface;
-use App\Interfaces\LatrineInterface;
-use App\Interfaces\SanitizationZoneInterface;
 use App\Interfaces\UserInterface;
 use App\Models\User;
 use App\Traits\PermissionHandler;
@@ -24,21 +17,9 @@ class DashboardController extends BaseController
 
     public function __construct(
         protected UserInterface $user,
-        protected LatrineInterface $latrine,
-        protected SanitizationZoneInterface $zone,
-        protected DesludgeInterface $desludge,
-        protected DashboardInterface $dashboard,
-        protected CampInterface $camp,
-        protected AgencyInterface $agency
     )
     {
         $this->setService($this->user);
-        $this->setService($this->latrine);
-        $this->setService($this->zone);
-        $this->setService($this->desludge);
-        $this->setService($this->dashboard);
-        $this->setService($this->camp);
-        $this->setService($this->agency);
     }
 
     public function index()
@@ -83,7 +64,7 @@ class DashboardController extends BaseController
         return Inertia::render(
             'Dashboard/Index',
             [
-                'camps' => $camps,
+                'camps' => [],
                 'total-camps' => count($camps),
                 'blocks' => $blocks,
                 'total-blocks' => count($blocks),
