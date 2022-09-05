@@ -1,0 +1,11 @@
+@media print {
+    #qrcode-container img{
+        margin: auto;
+        margin-top: 30%;
+        width: 550px;
+        height: 550px;
+    }
+    #qrcode-container .profile-username{
+        font-size: 56px;
+    }
+}

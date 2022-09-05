@@ -1,0 +1,27 @@
+{
+    "menu": {
+        "home": "Home",
+        "dashboard": "Dashboard",
+        "user": "User",
+        "role": "Role",
+        "create": "create",
+        "edit": "Edit",
+        "update": "Update",
+        "delete": "Delete",
+        "submit": "Submit",
+        "Facility": "Facility",
+        "Facility Used": "Facility Used",
+        "PIT": "PIT",
+        "PWSN": "PWSN",
+        "Structure": "Structure",
+        "Agency": "Agency",
+        "Team": "Team"
+    },
+    "message": {
+        "User Management": "User management",
+        "Setup": "Setup",
+        "User list": "User list",
+        "All user list": "All user list",
+        "Logout": "Logout"
+    }
+}

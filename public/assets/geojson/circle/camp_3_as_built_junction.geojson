@@ -1,0 +1,1024 @@
+{
+    "type": "FeatureCollection",
+    "name": "camp_3_as_built_junction",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 1,
+                "Transfer S": "TS-01",
+                "Junction I": "03G-C54",
+                "Block": "3G",
+                "Latitude N": 21.20861,
+                "Longitude": 92.151928,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": 2,
+                "Capacity": 20000,
+                "Remarks": "Primary Collection Tank (PCT)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.151928,
+                    21.20861
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 2,
+                "Transfer S": "TS-02",
+                "Junction I": "03E-C55",
+                "Block": "3G",
+                "Latitude N": 21.208048,
+                "Longitude": 92.150702,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": 2,
+                "Capacity": 20000,
+                "Remarks": "Primary Collection Tank (PCT)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.150702,
+                    21.208048
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 3,
+                "Transfer S": "TS_03",
+                "Junction I": "03G-C53",
+                "Block": "3G",
+                "Latitude N": 21.2071692,
+                "Longitude": 92.1509242,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": 2,
+                "Capacity": 20000,
+                "Remarks": "Secondary Collection Tank (SCT)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.1509242,
+                    21.2071692
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 4,
+                "Transfer S": "TS_04",
+                "Junction I": "TS_04",
+                "Block": "3G",
+                "Latitude N": 21.2067154,
+                "Longitude": 92.1515993,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": 1,
+                "Capacity": 10000,
+                "Remarks": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.1515993,
+                    21.2067154
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 5,
+                "Transfer S": "TS_05",
+                "Junction I": "TS_05",
+                "Block": "3E",
+                "Latitude N": 21.2083304,
+                "Longitude": 92.1498408,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": 1,
+                "Capacity": 10000,
+                "Remarks": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.1498408,
+                    21.2083304
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 6,
+                "Transfer S": "TS-06",
+                "Junction I": "03D-C56",
+                "Block": "3D",
+                "Latitude N": 21.208061,
+                "Longitude": 92.148563,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": 5,
+                "Capacity": 50000,
+                "Remarks": "Primary Collection Tank (PCT)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.148563,
+                    21.208061
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 7,
+                "Transfer S": "TS-07",
+                "Junction I": "03B-C57",
+                "Block": "3D",
+                "Latitude N": 21.209667,
+                "Longitude": 92.1488662,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": 4,
+                "Capacity": 40000,
+                "Remarks": "Primary Collection Tank (PCT)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.1488662,
+                    21.209667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 8,
+                "Transfer S": "TS-08",
+                "Junction I": "03A-C58",
+                "Block": "3A",
+                "Latitude N": 21.211308,
+                "Longitude": 92.147281,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": 5,
+                "Capacity": 50000,
+                "Remarks": "Secondary Collection Tank (SCT)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.147281,
+                    21.211308
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 9,
+                "Transfer S": "TS_09",
+                "Junction I": "TS_09",
+                "Block": "3A",
+                "Latitude N": 21.211504,
+                "Longitude": 92.148384,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": 2,
+                "Capacity": 20000,
+                "Remarks": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.148384,
+                    21.211504
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 10,
+                "Transfer S": "TS_10",
+                "Junction I": "TS_10",
+                "Block": "3B",
+                "Latitude N": 21.211166,
+                "Longitude": 92.149131,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": 2,
+                "Capacity": 20000,
+                "Remarks": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.149131,
+                    21.211166
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 11,
+                "Transfer S": "TS_11",
+                "Junction I": "TS_11",
+                "Block": "3C",
+                "Latitude N": 21.2074216,
+                "Longitude": 92.1464505,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": 2,
+                "Capacity": 20000,
+                "Remarks": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.1464505,
+                    21.2074216
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 12,
+                "Transfer S": "TS_12",
+                "Junction I": "TS_12",
+                "Block": "3C",
+                "Latitude N": 21.2088146,
+                "Longitude": 92.1470011,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": 2,
+                "Capacity": 20000,
+                "Remarks": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.1470011,
+                    21.2088146
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 13,
+                "Transfer S": null,
+                "Junction I": "03A-C60",
+                "Block": "4A",
+                "Latitude N": 21.212065,
+                "Longitude": 92.146514,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": 2,
+                "Capacity": 20000,
+                "Remarks": "Primary Collection Tank (PCT)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.146514,
+                    21.212065
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 14,
+                "Transfer S": null,
+                "Junction I": "03D-C59",
+                "Block": "3C",
+                "Latitude N": 21.209288,
+                "Longitude": 92.146032,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": 2,
+                "Capacity": 20000,
+                "Remarks": "Primary Collection Tank (PCT)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.146032,
+                    21.209288
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 15,
+                "Transfer S": null,
+                "Junction I": "J56-001",
+                "Block": "3C",
+                "Latitude N": 21.208078,
+                "Longitude": 92.146935,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": 1,
+                "Capacity": 10000,
+                "Remarks": "Primary Trasnfer Tank (PTT)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.146935,
+                    21.208078
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 16,
+                "Transfer S": null,
+                "Junction I": "J56-002",
+                "Block": null,
+                "Latitude N": 21.2074037,
+                "Longitude": 92.1473833,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": 1,
+                "Capacity": 10000,
+                "Remarks": "Primary Trasnfer Tank (PTT)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.1473833,
+                    21.2074037
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 17,
+                "Transfer S": null,
+                "Junction I": "J53-001",
+                "Block": null,
+                "Latitude N": 21.2073498,
+                "Longitude": 92.1518709,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "Existing Septic Tank"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.1518709,
+                    21.2073498
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 18,
+                "Transfer S": null,
+                "Junction I": "J53-002",
+                "Block": "3F",
+                "Latitude N": 21.206389,
+                "Longitude": 92.151253,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "Inspection Pit/Rodding Point"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.151253,
+                    21.206389
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 19,
+                "Transfer S": null,
+                "Junction I": "J54-001",
+                "Block": "3E",
+                "Latitude N": 21.2091618,
+                "Longitude": 92.1514302,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "Exiting Septic Tank"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.1514302,
+                    21.2091618
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 20,
+                "Transfer S": null,
+                "Junction I": "J54-002",
+                "Block": "3G",
+                "Latitude N": 21.208255,
+                "Longitude": 92.152086,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "Exiting Septic Tank"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.152086,
+                    21.208255
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 21,
+                "Transfer S": null,
+                "Junction I": "J56-003",
+                "Block": "3D",
+                "Latitude N": 21.2074283,
+                "Longitude": 92.1485163,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "Inspection Pit/Rodding Point"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.1485163,
+                    21.2074283
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 22,
+                "Transfer S": null,
+                "Junction I": "J56-004",
+                "Block": "3F",
+                "Latitude N": 21.205884,
+                "Longitude": 92.149109,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "Inspection Pit/Rodding Point"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.149109,
+                    21.205884
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 23,
+                "Transfer S": null,
+                "Junction I": "J56-005",
+                "Block": "3F",
+                "Latitude N": 21.206888,
+                "Longitude": 92.148673,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "Inspection Pit/Rodding Point"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.148673,
+                    21.206888
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 24,
+                "Transfer S": null,
+                "Junction I": "J56-006",
+                "Block": "3F",
+                "Latitude N": 21.207387,
+                "Longitude": 92.149248,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "Inspection Pit/Rodding Point"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.149248,
+                    21.207387
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 25,
+                "Transfer S": null,
+                "Junction I": "J57-001",
+                "Block": "3B",
+                "Latitude N": 21.2089799,
+                "Longitude": 92.1495832,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "Exiting Septic Tank"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.1495832,
+                    21.2089799
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 26,
+                "Transfer S": null,
+                "Junction I": "J57-002",
+                "Block": "3E",
+                "Latitude N": 21.2094432,
+                "Longitude": 92.1505091,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "Exiting Septic Tank"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.1505091,
+                    21.2094432
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 27,
+                "Transfer S": null,
+                "Junction I": "J57-003",
+                "Block": "3D",
+                "Latitude N": 21.2106439,
+                "Longitude": 92.1505985,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "Exiting Septic Tank"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.1505985,
+                    21.2106439
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 28,
+                "Transfer S": null,
+                "Junction I": "J57-004",
+                "Block": "3B",
+                "Latitude N": 21.21079,
+                "Longitude": 92.148955,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "Primary Transfer Node (PTN)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.148955,
+                    21.21079
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 29,
+                "Transfer S": null,
+                "Junction I": "J57-005",
+                "Block": "3B",
+                "Latitude N": 21.210031,
+                "Longitude": 92.149869,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "Exiting Septic Tank"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.149869,
+                    21.210031
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 30,
+                "Transfer S": null,
+                "Junction I": "J58-001",
+                "Block": null,
+                "Latitude N": 21.211005,
+                "Longitude": 92.148306,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "Existing Septic Tank"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.148306,
+                    21.211005
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 31,
+                "Transfer S": null,
+                "Junction I": "J59-002",
+                "Block": "3C",
+                "Latitude N": 21.209344,
+                "Longitude": 92.14731131000001,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "Primary Transfer Node (PTN)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.14731131,
+                    21.209344
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 32,
+                "Transfer S": null,
+                "Junction I": "J60-002",
+                "Block": "3A",
+                "Latitude N": 21.212021,
+                "Longitude": 92.148864,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "Inspection Pit/Rodding Point"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.148864,
+                    21.212021
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 33,
+                "Transfer S": null,
+                "Junction I": "J60-003",
+                "Block": "3A",
+                "Latitude N": 21.21198374,
+                "Longitude": 92.14764423,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "Existing Septic Tank"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.14764423,
+                    21.21198374
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 34,
+                "Transfer S": null,
+                "Junction I": "J60-004",
+                "Block": "3A",
+                "Latitude N": 21.213208,
+                "Longitude": 92.148065,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "Inspection Pit/Rodding Point"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.148065,
+                    21.213208
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 35,
+                "Transfer S": null,
+                "Junction I": "J60-005",
+                "Block": "3A",
+                "Latitude N": 21.213108,
+                "Longitude": 92.147074,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "Primary Transfer Node (PTN)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.147074,
+                    21.213108
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 36,
+                "Transfer S": null,
+                "Junction I": "Y-junction",
+                "Block": null,
+                "Latitude N": 21.2104898,
+                "Longitude": 92.149105,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "Y-junction"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.149105,
+                    21.2104898
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 37,
+                "Transfer S": null,
+                "Junction I": "Y-junction",
+                "Block": null,
+                "Latitude N": 21.20942201,
+                "Longitude": 92.14919245,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "Y-junction"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.14919245,
+                    21.20942201
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 38,
+                "Transfer S": null,
+                "Junction I": "Y-junction",
+                "Block": null,
+                "Latitude N": 21.2069654,
+                "Longitude": 92.1485806,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "Y-junction"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.148586328407418,
+                    21.207067582074064
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 39,
+                "Transfer S": null,
+                "Junction I": "J53-001",
+                "Block": null,
+                "Latitude N": 21.206641,
+                "Longitude": 92.150692,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "Existing Septic Tank"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.150692,
+                    21.206641
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 40,
+                "Transfer S": null,
+                "Junction I": "Y-junction",
+                "Block": null,
+                "Latitude N": 21.20666453,
+                "Longitude": 92.15103881,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "Y-junction"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.15103881,
+                    21.20666453
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 41,
+                "Transfer S": null,
+                "Junction I": "T Junction",
+                "Block": null,
+                "Latitude N": 21.20714065,
+                "Longitude": 92.15192231,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "T Junction"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.15192231,
+                    21.20714065
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 42,
+                "Transfer S": null,
+                "Junction I": "Y-junction",
+                "Block": null,
+                "Latitude N": 21.20782572,
+                "Longitude": 92.14741429,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "Y-junction"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.14741429,
+                    21.20782572
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 43,
+                "Transfer S": null,
+                "Junction I": "PTN",
+                "Block": null,
+                "Latitude N": 21.2097278,
+                "Longitude": 92.1471805,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "Primary Transfer Node (PTN)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.1471805,
+                    21.2097278
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "SL No.": 44,
+                "Transfer S": null,
+                "Junction I": "PTN",
+                "Block": null,
+                "Latitude N": 21.20732504,
+                "Longitude": 92.15307624,
+                "field_7": "Camp-3",
+                "5000 L": null,
+                "10000 L": null,
+                "Capacity": null,
+                "Remarks": "Primary Transfer Node (PTN)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    92.15307624,
+                    21.20732504
+                ]
+            }
+        }
+    ]
+}

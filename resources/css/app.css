@@ -1,0 +1,7 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+@import './adminlte.min.css';
+@import './sidebar.css';
+@import './qrprint.css';
