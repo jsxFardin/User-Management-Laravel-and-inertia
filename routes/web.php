@@ -52,14 +52,6 @@ Route::namespace('App\Http\Controllers')->group(function () {
         Route::get('ajax/get-menus', [DashboardController::class, 'getMenus'])->name('ajax.menus');
         Route::get('ajax/user-details', [UserController::class, 'userDetails'])->name('ajax.userDetails');
         Route::get('ajax/auth-user', [UserController::class, 'authUser'])->name('ajax.authUser');
-        Route::get('ajax/total-volume-desludged', [DashboardController::class, 'totalVolumeDesludged'])->name('ajax.total.volume.desludged');
-        Route::get('ajax/latrine-desludge-schedule', [DashboardController::class, 'latrineDesludgeSchedule'])->name('ajax.latrineDesludgeSchedule');
-        Route::get('ajax/typeof-latrine', [DashboardController::class, 'typeofLatrine'])->name('ajax.typeof.latrine');
-        Route::get('ajax/total-desludged-typeof-latrine', [DashboardController::class, 'totalDesludgedTypeofLatrine'])->name('ajax.totalDesludgedTypeofLatrine');
-        Route::get('ajax/total-hours-used', [DashboardController::class, 'totalHoursUsed'])->name('ajax.total.hours.used');
-        Route::get('ajax/see-foreign-materials', [DashboardController::class, 'seeForeignMaterials'])->name('ajax.see.foreign.materials');
-        Route::get('ajax/total-litter-fuel-used', [DashboardController::class, 'totalLitterFuelUsed'])->name('ajax.total.litter.fuel.used');
-        Route::get('ajax/required-sanitation-zone', [DashboardController::class, 'mostReqDesludgeSanitationZone'])->name('ajax.mostReqDesludgeSanitationZone');
 
         // Status update
         Route::put('user/status/{user}', [UserController::class, 'updateStatus'])->name('user.status');
