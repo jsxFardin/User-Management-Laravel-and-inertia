@@ -1,10 +1,4 @@
-1. Development Branch
-
-```
-git checkout dev
-```
-
-2. Install composer packages
+1. Install composer packages
 
 ```
 $ composer install
