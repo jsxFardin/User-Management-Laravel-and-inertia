@@ -22,7 +22,7 @@ put database credentials in .env file
 4. Migrate and insert records
 
 ```
-$ php artisan migrate
+$ php artisan migrate --seed
 ```
 
 5. Passport install and setup
